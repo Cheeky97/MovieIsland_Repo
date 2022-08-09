@@ -1,6 +1,6 @@
 
 [[headers]]
-    from = "/*"
+    for = "/*"
     [headers.values]
     Access-Control-Allow-Origin = "*"
 
