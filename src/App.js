@@ -37,8 +37,7 @@ const getMovieRequest = async (searchValue) => {
 
 useEffect(()=>{
   const movieFavourites = user ? service(movieId) : [];
-  console.log(movieFavourites);
-  setTimeout(() => { setFavourites(movieFavourites); console.log(favourites);}, 1000);
+  setTimeout(() => { setFavourites(movieFavourites);}, 1000);
 },[])
 
 
