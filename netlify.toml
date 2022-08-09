@@ -1,11 +1,6 @@
-[[redirects]]
-    from = "/*"
-    to = "/index.html"
-    status = 200
-
 
 [[headers]]
     from = "/*"
     [headers.values]
-    Access-Control-Allow-Origin = "https://flourishing-torte-b6f1ea.netlify.app/"
+    Access-Control-Allow-Origin = "*"
 
