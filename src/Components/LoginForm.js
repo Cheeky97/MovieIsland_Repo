@@ -63,16 +63,16 @@ const Link = styledComponents.a`
 `
 
 const LoginForm = () => {
-     const [email, setEmail] = useState("");
-     const [password, setPassword] = useState("");
-     const error = useSelector(state => state.error);
-     const isFetching = useSelector(state => state.isFetching);
-     const dispatch = useDispatch();
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const error = useSelector(state => state.error);
+    const isFetching = useSelector(state => state.isFetching);
+    const dispatch = useDispatch();
 
-     const handleClick = (e) =>{
-         e.preventDefault();
-         login(dispatch, {email, password});
-     }
+    const handleClick = (e) =>{
+        e.preventDefault();
+        login(dispatch, {email, password});
+    }
 
   return (
     <Container>

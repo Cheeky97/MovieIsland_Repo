@@ -19,5 +19,5 @@ export const AddFavourite_Movies = async (userId, movieId) => {
 
 export const newUserRegister = async (user) => {
     const result = await publicRequest.post("/user/register", user);
-    return result;
+    return result.data;  
 }

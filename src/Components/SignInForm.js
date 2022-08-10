@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import styledComponents from 'styled-components'
 import RegisterImage from '../Images/Register.jpg';
 import { newUserRegister } from '../Redux/apiCall';
+import { useNavigate } from 'react-router-dom'
 
 const Container = styledComponents.div`
     width: 100vw;
@@ -50,7 +51,7 @@ const Button = styledComponents.button`
     background-color: #f9d3b4;
     color: #141414;;
     cursor: pointer;
-    margin: 15px 5px 0px 260px;
+    margin: 15px 5px 0px 200px;
     border-radius: 11px;
 `
 const Label = styledComponents.label`
@@ -70,7 +71,7 @@ const SignInForm = () => {
     const [formValues, setFormValues] = useState(initialValues);
     const [formErrors, setFormErrors] = useState({});
     const [isSubmit, setIsSubmit] = useState(false);
-    const [user, setUser] = useState({});
+    const navigate = useNavigate();
     
     const handleChange = (e) => {
         const {name, value} = e.target;
@@ -87,8 +88,11 @@ const SignInForm = () => {
     useEffect(()=>{
         if(Object.keys(formErrors).length === 0 && isSubmit){
             const result = newUserRegister(formValues);
-            setFormValues(initialValues);
-            console.log(result);
+            result.then(x=>{
+                if(formValues.email === x.email){
+                    navigate("/login");
+                }
+            });
         }else{
             setIsSubmit(false);
         }
