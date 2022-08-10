@@ -7,7 +7,7 @@ const service = (movieId) => {
             const response = await fetch(url);
             const responseJson = await response.json();
             if(responseJson.imdbID){
-              tempFavArray.push({"Title": responseJson.Title, "Year": responseJson.Year, "imdbID": responseJson.imdbID, "Plot": responseJson.Plot, "Poster": responseJson.Poster});
+              tempFavArray.push({"Title": responseJson.Title, "Year": responseJson.Year, "imdbID": responseJson.imdbID, "Type": responseJson.Type, "Poster": responseJson.Poster});
             }
         }
         fetchData();

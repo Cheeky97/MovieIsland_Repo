@@ -14,7 +14,7 @@ export const login = async (dispatch,user)=>{
 export const AddFavourite_Movies = async (userId, movieId) => {
     const result = await userRequest.put(`/user/${userId}`, {"favourite_movies": movieId.toString()});
     console.log(result.data);
-    return result.data;
+   // return result.data;
 }
 
 export const newUserRegister = async (user) => {

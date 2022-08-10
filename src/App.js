@@ -50,7 +50,7 @@ const AddFavouriteMovie = (movie) => {
     if((favArray.length === 0) || !(favArray.filter(x=>x === movie.imdbID).length > 0)){
       const newMovieId = [...favArray, movie.imdbID];
       setMovieId(newMovieId);
-      AddFavourite_Movies(user.id, [...newMovieId.filter(n => n)]);
+      AddFavourite_Movies(user._id, [...newMovieId.filter(n => n)]);
       dispatch(addFavouriteMovieId(newMovieId.toString()));
 
     }
@@ -70,7 +70,7 @@ const RemoveFavouriteMovie = (movie) => {
     if(favArray.length > 0){
       const newMovieId = favArray.filter(x=> x !== movie.imdbID);
       console.log(newMovieId);
-      AddFavourite_Movies(user.id, [...newMovieId.filter(n => n)]);
+      AddFavourite_Movies(user._id, [...newMovieId.filter(n => n)]);
       dispatch(addFavouriteMovieId(newMovieId.toString()));
     }
   
